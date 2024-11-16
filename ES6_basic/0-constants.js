@@ -1,9 +1,15 @@
-function taskfirst() {
-    const myNumber = 10;
-    console.log(myNumber);
+export function taskFirst() {
+    const task = 'I prefer const when I can.';
+    return task;
 }
-function taskNext() {
-    let myAge = 30;
-    myAge = 31;
-    console.log(myAge);
+
+export function getLast() {
+    return ' is okay';
+}
+
+export function taskNext() {
+    let combination = 'But sometimes let';
+    combination += getLast();
+
+    return combination;
 }
