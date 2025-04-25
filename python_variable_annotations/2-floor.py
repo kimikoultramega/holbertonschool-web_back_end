@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-import math
-
 """
 Módulo 2-floor
-
 La función `floor` que calcula la parte entera (piso) de un número decimal.
 El módulo `math`, que es una librería estándar con funciones matemáticas como:
-  - `floor`: devuelve el entero más grande que no excede un número dado.
+- `floor`: devuelve el entero más grande que no excede un número dado.
 """
+import math
 
 
 def floor(n: float) -> int:
