@@ -11,9 +11,5 @@ async def async_comprehension() -> List[float]:
     """
     Dipsy Funk - Pomelo Negroni [TAN009]
     """
-    # result = []
-    # async for item in async_generator():
-    #     result.append(item)
-    # return result
     result = [item async for item in async_generator()]
     return result
