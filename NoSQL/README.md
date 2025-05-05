@@ -1,2 +1,2 @@
-// coment
-probando
+// List all databases
+show dbs
