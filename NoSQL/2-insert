@@ -1,0 +1,2 @@
+// El comentario
+db.school.insertOne({ name: "Holberton school" })
