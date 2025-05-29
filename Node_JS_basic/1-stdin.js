@@ -1,18 +1,10 @@
-
 const fs = require('fs');
 
 function countStudents(path) {
   try {
-    // Leer el archivo de forma síncrona
     const data = fs.readFileSync(path, 'utf8');
-
-    // Dividir en líneas y filtrar líneas vacías
     const lines = data.split('\n').filter((line) => line.trim() !== '');
-
-    // Remover la primera línea (headers)
     const studentLines = lines.slice(1);
-
-    // Procesar cada línea para obtener estudiantes válidos
     const students = [];
     studentLines.forEach((line) => {
       const fields = line.split(',');
@@ -25,11 +17,7 @@ function countStudents(path) {
         });
       }
     });
-
-    // Mostrar número total de estudiantes
     console.log(`Number of students: ${students.length}`);
-
-    // Agrupar estudiantes por campo
     const fieldGroups = {};
     students.forEach((student) => {
       if (!fieldGroups[student.field]) {
@@ -37,8 +25,6 @@ function countStudents(path) {
       }
       fieldGroups[student.field].push(student.firstname);
     });
-
-    // Mostrar estadísticas por campo
     Object.keys(fieldGroups).forEach((field) => {
       const studentNames = fieldGroups[field];
       console.log(`Number of students in ${field}: ${studentNames.length}. List: ${studentNames.join(', ')}`);
