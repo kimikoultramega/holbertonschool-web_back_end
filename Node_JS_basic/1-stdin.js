@@ -5,17 +5,8 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-console.log('Welcome to Holberton School, what is your name?');
-
-rl.question('', (name) => {
+rl.question('Welcome to Holberton School, what is your name?\n', (name) => {
   process.stdout.write(`Your name is: ${name}\r`);
-});
-
-rl.on('close', () => {
   console.log('This important software is now closing');
-});
-
-process.on('SIGINT', () => {
-  console.log('\nThis important software is now closing');
-  process.exit(0);
+  rl.close();
 });
