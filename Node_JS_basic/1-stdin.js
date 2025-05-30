@@ -11,6 +11,10 @@ rl.question('', (name) => {
   process.stdout.write(`Your name is: ${name}\r`);
 });
 
+rl.on('close', () => {
+  console.log('This important software is now closing');
+});
+
 process.on('SIGINT', () => {
   console.log('\nThis important software is now closing');
   process.exit(0);
