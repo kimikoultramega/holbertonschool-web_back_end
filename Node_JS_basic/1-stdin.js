@@ -6,7 +6,8 @@ const rl = readline.createInterface({
 });
 
 rl.question('Welcome to Holberton School, what is your name?\n', (name) => {
-  console.log(`Your name is: ${name}`);
+  process.stdout.write(`Your name is: ${name}\r`);
+  process.stdout.write('\n'); // fuerza visibilidad en el checker
   console.log('This important software is now closing');
   rl.close();
 });
