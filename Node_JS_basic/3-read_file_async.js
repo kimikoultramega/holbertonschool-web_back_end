@@ -18,27 +18,26 @@ function countStudents(path) {
         }
 
         const students = lines.slice(1);
-        const validStudents = students.filter(line => {
-          const fields = line.split(',');
-          return fields.length >= 4 && fields[0].trim() !== '';
+        const validStudents = students.filter((line) => {
+          const fields = line.split(',');          return fields.length >= 4 && fields[0].trim() !== '';
         });
 
         console.log(`Number of students: ${validStudents.length}`);
 
         const fieldGroups = {};
-        
-        validStudents.forEach(student => {
+
+        validStudents.forEach((student) => {
           const fields = student.split(',');
           const firstName = fields[0].trim();
           const field = fields[3].trim();
-          
+
           if (!fieldGroups[field]) {
             fieldGroups[field] = [];
           }
           fieldGroups[field].push(firstName);
         });
 
-        Object.keys(fieldGroups).forEach(field => {
+        Object.keys(fieldGroups).forEach((field) => {
           const students = fieldGroups[field];
           console.log(`Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`);
         });
